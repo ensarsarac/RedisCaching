@@ -13,4 +13,5 @@
 
 <h5>Redis Caching Çeşitleri</h5>
 
-<p><h6>In-Memory Caching: </h6>asdasdsa</p> 
+<p><h6>In-Memory Caching: </h6>Uygulamanın çalıştığı bilgisayarın RAM'inde caching yapar.</p> 
+<p><h6>Distributed Caching: </h6>Veriler birden fazla makinede önbelleğe alınarak daha güvenilir bir yöntem sağlanır.</p> 
