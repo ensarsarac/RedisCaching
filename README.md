@@ -13,4 +13,4 @@
 
 <h5>Redis Caching Çeşitleri</h5>
 
-<b>In-Memory Caching: </b> <p>asdasdsa</p> 
+<p><h6>In-Memory Caching: </h6>asdasdsa</p> 
