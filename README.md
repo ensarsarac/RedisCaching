@@ -6,3 +6,7 @@
 <p>Redis, Asp.Net Core, MSSQL, Caching, Replication, Sentinel, Docker, Redis Insight</p>
 <br>
 <hr>
+
+<h5>Redis Caching Nedir ?</h5>
+
+<p>Verilere daha hızlı erişim sağlamak amacıyla verilerin bellekte saklanmasına caching denir.</p>
