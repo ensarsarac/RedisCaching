@@ -15,3 +15,8 @@
 
 <p><h6>In-Memory Caching: </h6>Uygulamanın çalıştığı bilgisayarın RAM'inde caching yapar.</p> 
 <p><h6>Distributed Caching: </h6>Veriler birden fazla makinede önbelleğe alınarak daha güvenilir bir yöntem sağlanır.</p> 
+
+<h5>Redis Caching Süreleri</h5>
+
+<p><h6>Absolute Time: </h6>Verilerin bellekte ne kadar süreyle kalacağını belirler.</p> 
+<p><h6>Sliding Time: </h6>Örneğin, bir veri için mutlak süre (absolute time) 30 saniye, kayma süresi (sliding time) ise 5 saniye olarak ayarlandığında, eğer veriye 5 saniye boyunca erişim olmazsa bellekten silinir; ancak sürekli erişim sağlanırsa 30 saniye sonra silinir.</p> 
