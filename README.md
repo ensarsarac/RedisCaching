@@ -10,3 +10,7 @@
 <h5>Redis Caching Nedir ?</h5>
 
 <p>Verilere daha hızlı erişim sağlamak amacıyla verilerin bellekte saklanmasına caching denir.</p>
+
+<h5>Redis Caching Çeşitleri</h5>
+
+<b>In-Memory Caching: </b> <p>asdasdsa</p> 
