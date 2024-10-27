@@ -20,3 +20,10 @@
 
 <p><h6>Absolute Time: </h6>Verilerin bellekte ne kadar süreyle kalacağını belirler.</p> 
 <p><h6>Sliding Time: </h6>Örneğin, bir veri için mutlak süre (absolute time) 30 saniye, kayma süresi (sliding time) ise 5 saniye olarak ayarlandığında, eğer veriye 5 saniye boyunca erişim olmazsa bellekten silinir; ancak sürekli erişim sağlanırsa 30 saniye sonra silinir.</p> 
+
+<p>Proje içerisinde 2 türlü basit cache yöntemi mevcuttur.</p>
+
+<h5>Replication Nedir</h5>
+
+<p>Sunucudaki verilerin güvenliği için bir kopyasını saklayarak veri kaybı gibi durumların önüne geçilir.</p>
+<p>Master ve Slave sunucuları bulunur. Master sunuculardaki veriler Slave sunuculara aktarılır ve aralarında sürekli bir bağlantı sağlanır. Bağlantı kesildiğinde, otomatik olarak yeniden bağlantı kurulmaya çalışılır ve veri aktarımı devam eder. Bir Master sunucunun birden fazla Slave sunucusu olabilir ve bu Slave sunucular yalnızca salt okunur (read-only) modda tutulur.</p>
