@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMemory.Caching", "InMemor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCache.Sentinel", "RedisCache.Sentinel\RedisCache.Sentinel.csproj", "{5E89E377-C46D-47D7-9533-9540CCAC3826}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCache.Example", "RedisCache.Example\RedisCache.Example.csproj", "{78515169-D6BB-4001-998D-5130653DEA99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5E89E377-C46D-47D7-9533-9540CCAC3826}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E89E377-C46D-47D7-9533-9540CCAC3826}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E89E377-C46D-47D7-9533-9540CCAC3826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78515169-D6BB-4001-998D-5130653DEA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78515169-D6BB-4001-998D-5130653DEA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78515169-D6BB-4001-998D-5130653DEA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78515169-D6BB-4001-998D-5130653DEA99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
