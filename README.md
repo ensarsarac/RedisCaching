@@ -49,6 +49,9 @@
 
 <h5>RedisCaching.Example Projesi</h5>
 
+İlk olarak Asp.Net WEB API proje oluşturuyoruz. Amacımız redis sunucusunu test etmek olduğu için basit bir yapı ile MSSQL server bağlıyorum ve birkaç test verisi gönderiyorum.
+
+![image](https://github.com/user-attachments/assets/207f2b8b-95c7-4f81-a429-5b7fd853d9e4)
 
 
 
