@@ -75,11 +75,11 @@ Sonrasında program.cs içerisinde gerekli servisleri ekledik.
 
 Not: Redis Cache crud servislerine uygulama içerisinden ulaşabilirsiniz.
 
-Apiye istekde bulunduğumuz zaman ilk olarak redis sunucuna bakıyor veri orada yok ise veriyi database'den alıyor ve redis sunucuna aktarıyor.
+API'ye istek yaptığımızda, ilk olarak Redis sunucusuna bakılıyor. Eğer veri orada yoksa, veri veritabanından alınıyor ve ardından Redis sunucusuna aktarılıyor.
 
 ![image](https://github.com/user-attachments/assets/1e2a0105-ca28-411e-b206-1e59951dd14e)
 
-SQL'den çekip getirilen süre ile redis sunucusu üzerinden getirilen süreler 
+SQL'den çekilen süre ile Redis sunucusu üzerinden alınan süreler.
 
 
 
