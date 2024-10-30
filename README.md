@@ -61,6 +61,9 @@ Ardından Redis Sunucusunu oluştuyorum.
 
 ![image](https://github.com/user-attachments/assets/7b6954a6-ccd1-4d9c-a633-bf8c16b6431c)
 
+Görüldüğü üzere docker üzerinde redis sunucumuzun kurulumunu gerçekleştirdik.
+
+![image](https://github.com/user-attachments/assets/93afbbc8-4695-4e3b-a7c2-8aaee8f3e639)
 
 
 
