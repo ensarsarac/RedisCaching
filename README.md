@@ -96,6 +96,7 @@ Master sunucumuzun yedeğini almış olduk.
 
 ![image](https://github.com/user-attachments/assets/d69ab292-163c-488e-bc5b-cebe8e945fc2)
 
+Şimdi, master sunucusunda herhangi bir sorun oluştuğunda kesinti olmaması için iki adet Redis Sentinel sunucusu kuracağız.
 
 
 
