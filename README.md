@@ -65,6 +65,23 @@ Görüldüğü üzere docker üzerinde redis sunucumuzun kurulumunu gerçekleşt
 
 ![image](https://github.com/user-attachments/assets/93afbbc8-4695-4e3b-a7c2-8aaee8f3e639)
 
+Artık .Net Core tarafında bağlantı kurmalıyız. AppSetting.json üzerinde Redis değerlerini girdik.
+
+![image](https://github.com/user-attachments/assets/1d754860-1394-4ce2-8eb9-83cec186842e)
+
+Sonrasında program.cs içerisinde gerekli servisleri ekledik.
+
+![image](https://github.com/user-attachments/assets/ab43dce1-ce10-45bd-9871-437fb2ccb1e3)
+
+Not: Redis Cache crud servislerine uygulama içerisinden ulaşabilirsiniz.
+
+Apiye istekde bulunduğumuz zaman ilk olarak redis sunucuna bakıyor veri orada yok ise veriyi database'den alıyor ve redis sunucuna aktarıyor.
+
+![image](https://github.com/user-attachments/assets/1e2a0105-ca28-411e-b206-1e59951dd14e)
+
+SQL'den çekip getirilen süre ile redis sunucusu üzerinden getirilen süreler 
+
+
 
 
 
