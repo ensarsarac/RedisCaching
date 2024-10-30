@@ -97,6 +97,12 @@ Master sunucumuzun yedeğini almış olduk.
 ![image](https://github.com/user-attachments/assets/d69ab292-163c-488e-bc5b-cebe8e945fc2)
 
 Şimdi, master sunucusunda herhangi bir sorun oluştuğunda kesinti olmaması için iki adet Redis Sentinel sunucusu kuracağız.
+Bilgisayayarınız da herhangi bir yere sentinel.conf dosyası oluşturun ve içeriği aşağıda ki gibi olmalıdır.
+
+sentinel monitor mymaster 172.17.0.2 6379 2 // 2 sentinel sunucu adet sayısı bildirir.
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 10000
+sentinel parallel-syncs mymaster 3
 
 
 
