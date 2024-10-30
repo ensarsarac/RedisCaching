@@ -104,6 +104,10 @@ sentinel down-after-milliseconds mymaster 5000
 sentinel failover-timeout mymaster 10000
 sentinel parallel-syncs mymaster 3
 
+Sonrasında docker üzerinde sentinel sunucularını oluşturuyoruz.
+
+![image](https://github.com/user-attachments/assets/652a5a22-67c3-47bf-b995-7855ca1fb23e)
+
 
 
 
