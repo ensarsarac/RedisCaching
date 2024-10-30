@@ -81,6 +81,18 @@ API'ye istek yaptığımızda, ilk olarak Redis sunucusuna bakılıyor. Eğer ve
 
 SQL'den çekilen süre ile Redis sunucusu üzerinden alınan süreler.
 
+![image](https://github.com/user-attachments/assets/581a1099-bb3b-430b-8a23-f4897d59c1c8)
+
+Cachleme işlemi başarılı bir şekilde çalıştı. Artık redis master sunucusunun yedeğini alalım. 2 adet slave sunucu oluşturacağım.
+Dikakt edilmesi gereken yerler slave sunucuların portlarının değişmesidir.
+
+![image](https://github.com/user-attachments/assets/e092524e-d06b-479b-9404-97e09dfec41c)
+
+2 tane slave sunucusu oluşturduk.
+
+![image](https://github.com/user-attachments/assets/bf3db826-fe69-4dc7-975a-3c21a2128bf6)
+
+
 
 
 
