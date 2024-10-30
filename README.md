@@ -92,6 +92,11 @@ Dikakt edilmesi gereken yerler slave sunucuların portlarının değişmesidir.
 
 ![image](https://github.com/user-attachments/assets/bf3db826-fe69-4dc7-975a-3c21a2128bf6)
 
+Master sunucumuzun yedeğini almış olduk.
+
+![image](https://github.com/user-attachments/assets/d69ab292-163c-488e-bc5b-cebe8e945fc2)
+
+
 
 
 
