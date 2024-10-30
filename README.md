@@ -86,7 +86,7 @@ SQL'den çekilen süre ile Redis sunucusu üzerinden alınan süreler.
 Cachleme işlemi başarılı bir şekilde çalıştı. Artık redis master sunucusunun yedeğini alalım. 2 adet slave sunucu oluşturacağım.
 Dikakt edilmesi gereken yerler slave sunucuların portlarının değişmesidir.
 
-![image](https://github.com/user-attachments/assets/e092524e-d06b-479b-9404-97e09dfec41c)
+![image](https://github.com/user-attachments/assets/5f292907-410d-4fc5-8422-b074612bf0c5)
 
 2 tane slave sunucusu oluşturduk.
 
