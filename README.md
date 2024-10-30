@@ -49,6 +49,64 @@
 
 <h5>RedisCaching.Example Projesi</h5>
 
+İlk olarak bir ASP.NET Web API projesi oluşturuyoruz. Amacımız Redis sunucusunu test etmek olduğu için basit bir yapı ile MSSQL Server'a bağlanıyorum ve birkaç test verisi ekliyorum.
+
+![image](https://github.com/user-attachments/assets/207f2b8b-95c7-4f81-a429-5b7fd853d9e4)
+
+Sonrasında Microsoft.Extensions.Caching.StackExchangeRedis kütüphanesini yüklüyorum. Redis sunucusunu Docker üzerinden kuracağımız için ayrıca bir Docker ağı oluşturuyorum; böylece Sentinel uygulamasını da bu ağ üzerinde gerçekleştirebileceğim.
+
+![image](https://github.com/user-attachments/assets/be2b4bab-5549-4234-b415-c72531f59a91)
+
+Ardından Redis Sunucusunu oluştuyorum.
+
+![image](https://github.com/user-attachments/assets/7b6954a6-ccd1-4d9c-a633-bf8c16b6431c)
+
+Görüldüğü üzere docker üzerinde redis sunucumuzun kurulumunu gerçekleştirdik.
+
+![image](https://github.com/user-attachments/assets/93afbbc8-4695-4e3b-a7c2-8aaee8f3e639)
+
+Artık .Net Core tarafında bağlantı kurmalıyız. AppSetting.json üzerinde Redis değerlerini girdik.
+
+![image](https://github.com/user-attachments/assets/1d754860-1394-4ce2-8eb9-83cec186842e)
+
+Sonrasında program.cs içerisinde gerekli servisleri ekledik.
+
+![image](https://github.com/user-attachments/assets/ab43dce1-ce10-45bd-9871-437fb2ccb1e3)
+
+Not: Redis Cache crud servislerine uygulama içerisinden ulaşabilirsiniz.
+
+API'ye istek yaptığımızda, ilk olarak Redis sunucusuna bakılıyor. Eğer veri orada yoksa, veri veritabanından alınıyor ve ardından Redis sunucusuna aktarılıyor.
+
+![image](https://github.com/user-attachments/assets/1e2a0105-ca28-411e-b206-1e59951dd14e)
+
+SQL'den çekilen süre ile Redis sunucusu üzerinden alınan süreler.
+
+![image](https://github.com/user-attachments/assets/581a1099-bb3b-430b-8a23-f4897d59c1c8)
+
+Cachleme işlemi başarılı bir şekilde çalıştı. Artık redis master sunucusunun yedeğini alalım. 2 adet slave sunucu oluşturacağım.
+Dikakt edilmesi gereken yerler slave sunucuların portlarının değişmesidir.
+
+![image](https://github.com/user-attachments/assets/5f292907-410d-4fc5-8422-b074612bf0c5)
+
+2 tane slave sunucusu oluşturduk.
+
+![image](https://github.com/user-attachments/assets/bf3db826-fe69-4dc7-975a-3c21a2128bf6)
+
+Master sunucumuzun yedeğini almış olduk.
+
+![image](https://github.com/user-attachments/assets/d69ab292-163c-488e-bc5b-cebe8e945fc2)
+
+Şimdi, master sunucusunda herhangi bir sorun oluştuğunda kesinti olmaması için iki adet Redis Sentinel sunucusu kuracağız.
+Bilgisayayarınız da herhangi bir yere sentinel.conf dosyası oluşturun ve içeriği aşağıda ki gibi olmalıdır.
+
+sentinel monitor mymaster 172.17.0.2 6379 2 // 2 sentinel sunucu adet sayısı bildirir.
+sentinel down-after-milliseconds mymaster 5000
+sentinel failover-timeout mymaster 10000
+sentinel parallel-syncs mymaster 3
+
+Sonrasında docker üzerinde sentinel sunucularını oluşturuyoruz.
+
+![image](https://github.com/user-attachments/assets/652a5a22-67c3-47bf-b995-7855ca1fb23e)
 
 
 
