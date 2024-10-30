@@ -49,10 +49,17 @@
 
 <h5>RedisCaching.Example Projesi</h5>
 
-İlk olarak Asp.Net WEB API proje oluşturuyoruz. Amacımız redis sunucusunu test etmek olduğu için basit bir yapı ile MSSQL server bağlıyorum ve birkaç test verisi gönderiyorum.
+İlk olarak bir ASP.NET Web API projesi oluşturuyoruz. Amacımız Redis sunucusunu test etmek olduğu için basit bir yapı ile MSSQL Server'a bağlanıyorum ve birkaç test verisi ekliyorum.
 
 ![image](https://github.com/user-attachments/assets/207f2b8b-95c7-4f81-a429-5b7fd853d9e4)
 
+Sonrasında Microsoft.Extensions.Caching.StackExchangeRedis kütüphanesini yüklüyorum. Redis sunucusunu Docker üzerinden kuracağımız için ayrıca bir Docker ağı oluşturuyorum; böylece Sentinel uygulamasını da bu ağ üzerinde gerçekleştirebileceğim.
+
+![image](https://github.com/user-attachments/assets/be2b4bab-5549-4234-b415-c72531f59a91)
+
+Ardından Redis Sunucusunu oluştuyorum.
+
+![image](https://github.com/user-attachments/assets/7b6954a6-ccd1-4d9c-a633-bf8c16b6431c)
 
 
 
