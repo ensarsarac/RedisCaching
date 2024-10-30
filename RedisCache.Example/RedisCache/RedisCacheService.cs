@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using RedisCache.Example.Setting;
 using StackExchange.Redis;
 
 namespace RedisCache.Example.RedisCache
 {
-	public class RedisCacheService : IRedisCacheService
+	public class RedisCacheService<T> : IRedisCacheService<T> where T : class
 	{
 		private readonly StackExchange.Redis.IDatabase _database;
 		private readonly ConnectionMultiplexer _connectionMultiplexer;
@@ -13,24 +14,42 @@ namespace RedisCache.Example.RedisCache
 		public RedisCacheService(IOptions<RedisCacheSetting> options)
 		{
 			_setting = options.Value;
-			_connectionMultiplexer = ConnectionMultiplexer.Connect(_setting.RedisCache);
+			_connectionMultiplexer = ConnectionMultiplexer.Connect(_setting.ConnectionString);
 			_database = _connectionMultiplexer.GetDatabase();
 
 		}
 
-		public T GetData<T>(string key)
+		public async Task<T> GetAsync<T>(string key)
 		{
-			throw new NotImplementedException();
+			var value = await  _database.StringGetAsync(key);
+			if (!string.IsNullOrEmpty(value))
+			{
+				return JsonConvert.DeserializeObject<T>(value);
+			}
+			return default;
 		}
 
-		public object RemoveData(string key)
+		public async Task<bool> SetAsync<T>(string key, object value)
 		{
-			throw new NotImplementedException();
+			return await _database.StringSetAsync(key, JsonConvert.SerializeObject(value), TimeSpan.FromMinutes(5));
 		}
 
-		public bool SetData<T>(string key, T value, DateTimeOffset expirationTime)
+		public void RemoveAll(string key)
 		{
-			throw new NotImplementedException();
+			var redisEndpoints = _connectionMultiplexer.GetEndPoints(true);
+			foreach (var redisEndpoint in redisEndpoints)
+			{
+				var redisServer = _connectionMultiplexer.GetServer(redisEndpoint);
+				redisServer.FlushAllDatabases();
+			}
 		}
+
+		public async Task Remove(string key)
+		{
+			await _database.KeyDeleteAsync(key);
+		}
+
+		
+
 	}
 }

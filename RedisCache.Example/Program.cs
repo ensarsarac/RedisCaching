@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RedisCache.Example.DataAccess.Context;
 using RedisCache.Example.RedisCache;
 using RedisCache.Example.Services;
+using RedisCache.Example.Setting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,11 +19,16 @@ builder.Services.AddDbContext<RedisContext>(opt =>
 });
 
 builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IRedisCacheService, RedisCacheService>();
+builder.Services.AddSingleton(typeof(IRedisCacheService<>), typeof(RedisCacheService<>));
 
+
+var redisCacheSettings = builder.Configuration.GetSection("RedisCacheSetting").Get<RedisCacheSetting>();
+
+builder.Services.Configure<RedisCacheSetting>(builder.Configuration.GetSection("RedisCacheSetting"));
 builder.Services.AddStackExchangeRedisCache(opt =>
 {
-	opt.Configuration = builder.Configuration["RedisCacheSetting:ConnectionString"];
+	opt.Configuration = redisCacheSettings?.ConnectionString;
+	opt.InstanceName = redisCacheSettings?.InstanceName;
 });
 
 var app = builder.Build();
